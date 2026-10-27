@@ -1,63 +1,53 @@
 # Shaji Sivaraman
 
-**Forward-deployed engineering for enterprise AI.**
+**Forward Deployed Engineer · Enterprise AI · Microsoft**
 
-I build applications around business workflows and the integration layers that make them useful: financial-document processing, agent orchestration, private-network connectivity, and evidence-driven validation.
+I work with customers to turn business problems into software their teams can use. My work spans AI agents, enterprise integrations and the engineering around them: authentication, state, orchestration, deployment and validation.
 
-The work below connects a concrete problem to implementation, engineering trade-offs, and inspectable evidence.
+Before Microsoft, I was a product manager at Amazon, Skyscanner and SAP, working on ML systems, developer tooling and enterprise applications. That experience shapes how I build: understand the workflow, make the trade-offs explicit, and connect the implementation to a useful outcome.
 
-## Selected work
+[LinkedIn](https://www.linkedin.com/in/shajisivaraman/)
+
+## Selected engineering work
 
 ### Financial statement processing
 
-**Problem:** turn PDF financial reports into structured statements and Excel workbooks that an analyst can review.
+A PDF-to-Excel workflow for credit analysts, connecting a Python extraction pipeline, asynchronous Azure Functions, Copilot Studio and a Power Apps review interface.
 
-**Implementation:** a Python extraction pipeline, asynchronous Azure Functions, a Copilot Studio conversation, and a Power Apps review interface. Long-running extraction is separated from the connector's synchronous request.
+The implementation separates long-running extraction from synchronous connector calls and provides structured statements for analyst review. My accompanying sample was **merged into the PnP Microsoft 365 Copilot community repository**.
 
-**External contribution:** my [finance-statement agent sample](https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcs-finance-statement-agent) was [merged into the PnP community samples](https://github.com/pnp/copilot-pro-dev-samples/pull/138) on 11 May 2026.
-
-[Source and setup](https://github.com/sgshaji/AI-Finance-Statement-Extractor) | [Pipeline and tests](https://github.com/sgshaji/AI-Finance-Statement-Extractor/tree/main/azure-functions)
+[Implementation and setup](https://github.com/sgshaji/AI-Finance-Statement-Extractor) · [Accepted contribution](https://github.com/pnp/copilot-pro-dev-samples/pull/138)
 
 ### Private-network agent integration
 
-**Problem:** connect an external agent client to a Foundry agent without making the Foundry resources and data stores publicly reachable.
+A Python A2A broker and Terraform infrastructure connecting Copilot Studio to a private Foundry backend.
 
-**Implementation:** Terraform infrastructure and a Python A2A broker with public discovery, authenticated invocation, managed identity, and VNet-integrated access to private endpoints.
+The design separates public agent discovery from authenticated invocation, uses managed identity for Azure access, and reaches the backend through private endpoints. The repository includes the infrastructure, application code, integration findings and deployment instructions.
 
-**Engineering boundary:** the broker has public ingress; the Foundry backend remains private. The repository documents the integration decisions and deployment steps, rather than claiming that the whole system has no public surface.
-
-[Source and deployment](https://github.com/sgshaji/mcs-azure-foundry-a2a-vnet) | [Architecture and integration findings](https://github.com/sgshaji/mcs-azure-foundry-a2a-vnet/blob/main/docs/architecture.md)
+[Implementation](https://github.com/sgshaji/mcs-azure-foundry-a2a-vnet) · [Architecture and findings](https://github.com/sgshaji/mcs-azure-foundry-a2a-vnet/blob/main/docs/architecture.md)
 
 ### Agent capability validation
 
-**Problem:** a successful upload or a documented limit does not establish how much content an agent can actually use.
+Python tooling for testing what an agent can actually use, beyond whether a file upload succeeds.
 
-**Implementation:** controlled test artefacts, independent canaries, scoped evidence ledgers, boundary planning, and reports that distinguish measured results from assumptions.
+Controlled test artefacts, independently generated canaries and scoped evidence ledgers support reproducible boundary experiments. The tooling has a standard-library test suite and passing CI; live platform results are recorded separately for the environment and path tested.
 
-**Verification:** a standard-library Python test suite and CI cover the tooling. Live platform measurements require their own isolated experiment and recorded scope.
+[Methodology and implementation](https://github.com/sgshaji/copilot-studio-limits-validator) · [Tests](https://github.com/sgshaji/copilot-studio-limits-validator/tree/main/tests) · [CI](https://github.com/sgshaji/copilot-studio-limits-validator/actions/workflows/test.yml)
 
-[Source and methodology](https://github.com/sgshaji/copilot-studio-limits-validator) | [Tests](https://github.com/sgshaji/copilot-studio-limits-validator/tree/main/tests) | [CI](https://github.com/sgshaji/copilot-studio-limits-validator/actions/workflows/test.yml)
+## Further work
 
-## More engineering work
+- **[SharePoint document regeneration](https://github.com/sgshaji/file-iterator):** large-library investigation, dry-run cost gates, generated orchestration and explicit conversion outcomes. In development; tenant execution remains unverified.
+- **[RetailDaddy](https://github.com/sgshaji/RetailDaddy):** mobile retail sales and inventory workflows with React and Supabase.
+- **[PlanProof](https://github.com/sgshaji/PlanProof):** collaborative planning-application validation with document analysis, rules, evidence-linked findings and human review.
 
-- **[SharePoint document regeneration](https://github.com/sgshaji/file-iterator):** investigation and orchestration around large libraries, dry-run cost gates, explicit outcomes, and recovery. Static validation passes; tenant import and end-to-end execution remain unverified.
-- **[RetailDaddy](https://github.com/sgshaji/RetailDaddy):** a mobile-first retail application for products, sales, and inventory, using React and Supabase.
-- **[PlanProof](https://github.com/sgshaji/PlanProof):** a collaborative planning-application validation project combining document analysis, rules, evidence-linked findings, and human review.
+## Open-source contributions
 
-## Upstream contributions
-
-| Contribution | Evidence |
+| Work | Evidence |
 |---|---|
-| Finance-statement agent sample | [Merged PR](https://github.com/pnp/copilot-pro-dev-samples/pull/138) |
-| Financial Statement Intelligence skill | [Submitted PR](https://github.com/microsoft/cat-agent-skills/pull/387) |
-| Python compatibility and null-handling fixes for LLMDriftTracker | [Submitted PR](https://github.com/kaul-vineet/LLMDriftTracker/pull/2) |
+| Copilot Studio financial-statement agent | [Merged into PnP](https://github.com/pnp/copilot-pro-dev-samples/pull/138) |
+| Financial Statement Intelligence skill | [Submission](https://github.com/microsoft/cat-agent-skills/pull/387) |
+| LLMDriftTracker Python compatibility and null-handling fixes | [Open pull request](https://github.com/kaul-vineet/LLMDriftTracker/pull/2) |
 
-Submission states were checked on 27 October 2026. A submission is not an accepted contribution; a merged sample is not evidence of production adoption.
+**Tools I work with:** Python, TypeScript/JavaScript, APIs, Azure Functions, Foundry, Copilot Studio, Microsoft 365, Terraform, A2A and MCP.
 
-## Engineering focus
-
-- **Build:** Python, TypeScript/JavaScript, APIs, document-processing pipelines, and review interfaces.
-- **Integrate:** Copilot Studio, Microsoft 365, Azure Functions, Foundry, A2A, and MCP.
-- **Deliver responsibly:** infrastructure as code, explicit authentication boundaries, bounded workflows, and reproducible validation.
-
-I welcome practical discussions about enterprise AI delivery, agent integration, and evaluation. Repository issues are a good place to discuss a specific implementation or trade-off.
+Interested in enterprise AI delivery, agent interoperability and evaluation? [Connect on LinkedIn](https://www.linkedin.com/in/shajisivaraman/), or open an issue on the relevant project.
