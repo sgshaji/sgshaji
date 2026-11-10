@@ -37,7 +37,6 @@ Controlled test artefacts, independently generated canaries and scoped evidence 
 ## Further work
 
 - **[SharePoint document regeneration](https://github.com/sgshaji/file-iterator):** large-library investigation, dry-run cost gates, generated orchestration and explicit conversion outcomes. In development; tenant execution remains unverified.
-- **[RetailDaddy](https://github.com/sgshaji/RetailDaddy):** mobile retail sales and inventory workflows with React and Supabase.
 - **[PlanProof](https://github.com/sgshaji/PlanProof):** collaborative planning-application validation with document analysis, rules, evidence-linked findings and human review.
 
 ## Open-source contributions
